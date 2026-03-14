@@ -46,7 +46,7 @@ if st.button("Get My Plan"):
     nutrition = calculate_nutrition(body_weight, goal)
     workout = get_workout_plan(goal)
 
-    st.subheader("🥗 Daily Nutrition Targets")
+    st.subheader(" Daily Nutrition Targets")
     col1, col2, col3, col4, col5 = st.columns(5)
     col1.metric("Calories", f"{nutrition['daily_calories']} kcal")
     col2.metric("Protein", f"{nutrition['protein_g']}g")
@@ -54,7 +54,7 @@ if st.button("Get My Plan"):
     col4.metric("Fat", f"{nutrition['fat_g']}g")
     col5.metric("Water", f"{nutrition['water_liters']}L")
 
-    st.subheader("🗓️ 5-Day Workout Plan")
+    st.subheader(" 5-Day Workout Plan")
     for day, details in workout.items():
         with st.expander(f"{day} — {' + '.join(details['muscles'])}"):
             for exercise in details["exercises"]:
